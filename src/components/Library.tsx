@@ -10,6 +10,7 @@ import useAuthModal from '@/hooks/useAuthModal';
 import useSubscribeModal from '@/hooks/useSubscribeModal';
 
 import MediaItem from './MediaItem';
+import useOnPlay from '@/hooks/useOnPlay';
 
 interface LibraryProps {
   songs: Song[];
@@ -21,7 +22,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
   const authModal = useAuthModal();
   const subscribeModal = useSubscribeModal();
 
-  // const onPlay = useOnPlay(songs);
+  const onPlay = useOnPlay(songs);
 
   const onClick = () => {
     if (!user) {
@@ -56,8 +57,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
       <div className="flex flex-col gap-y-2 mt-4 px-3">
         {songs.map(item => (
           <MediaItem
-            // onClick={(id: string) => onPlay(id)}
-            onClick={() => {}}
+            onClick={(id: string) => onPlay(id)}
             key={item.id}
             data={item}
           />

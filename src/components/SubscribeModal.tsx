@@ -7,10 +7,10 @@ import useSubscribeModal from '@/hooks/useSubscribeModal';
 import { useUser } from '@/hooks/useUser';
 import { postData } from '@/libs/helpers';
 import { getStripe } from '@/libs/stripeClient';
-import { Price, ProductWithPrice } from '@/types';
 
 import Modal from './Modal';
 import Button from './Button';
+import { Price, ProductWithPrice } from '@/types/types';
 
 interface SubscribeModalProps {
   products: ProductWithPrice[];
